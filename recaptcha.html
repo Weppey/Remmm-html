@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>reCAPTCHA Test</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+      function onSubmit(token) {
+        // Inform C# app of success
+        window.chrome.webview.postMessage("captcha_success");
+      }
+    </script>
+  </head>
+  <body>
+    <form action="?" method="POST">
+      <button class="g-recaptcha" 
+              data-sitekey="6LeTii0rAAAAAHOeDE2Lr301h5LV_F1_uEQuj9Na" 
+              data-callback='onSubmit'>
+        I'm not a robot
+      </button>
+    </form>
+  </body>
+</html>
